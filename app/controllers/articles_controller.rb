@@ -13,10 +13,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = article.new(article_params)
+    @article = Article.new(article_params)
     @article.save
     redirect_to "/articles"
 
+  end
+
+  def edit
+    @article = Article.find(params[:id])
   end
 
   private
